@@ -1,4 +1,4 @@
-# ZaUI Shop
+# ZaUI Shop OK
 
 <p style="display: flex; flex-wrap: wrap; gap: 4px">
   <img alt="react" src="https://img.shields.io/github/package-json/dependency-version/Zalo-MiniApp/zaui-shop/react" />
