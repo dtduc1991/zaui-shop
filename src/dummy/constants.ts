@@ -43,10 +43,9 @@ export const listProductOptions: Options[] = [
 ];
 
 export const listCategories = [
-  "Tất cả sản phẩm",
-  " Quần áo",
-  "Dụng cụ thể thao",
-  "Giày dép",
+  "Trang Chủ",
+  "RAU SẠCH",
+  "TRÁI TƯƠI",
 ];
 export const listAddress = [
   "TP Hồ Chí Minh",
@@ -58,16 +57,16 @@ export const listAddress = [
   "Hội An",
 ];
 export const listNameProducts = [
-  "Dell Computer Monitor",
-  "Coach Tabby 26 for sale",
-  "Gaming Chair, local pickup only",
-  "Playstation 4 Blue Exclusive Limited Edition (with games)",
-  "Heimer Miller Sofa (Mint Condition)",
-  "Gopro hero 7 (with receipt)",
-  "Lego StarWar edition",
-  "Macbook Pro 16 inch (2020 ) For Sale",
-  "DJI Mavic Pro 2",
-  "Brand New Bike, Local buyer only",
+  "Bắp Cải",
+  "Bí Đỏ",
+  "Bí Xanh",
+  "Cà chua Cherry",
+  "Cà rốt",
+  "Cà tím",
+  "Chanh dây",
+  "Chuối",
+  "Củ dền",
+  "Đậu ve",
 ];
 export const listPrices = [
   { salePrice: "239000", retailPrice: "350000" },

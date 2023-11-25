@@ -1,15 +1,16 @@
-import { createDummyStore } from "./dummy/utils";
 import { atom, selector } from "recoil";
+
+import { filter } from "./constants/referrence";
+import { createDummyStore } from "./dummy/utils";
 import {
   Address,
   HeaderType,
-  StoreOrder,
   Product,
   ProductInfoPicked,
   Store,
+  StoreOrder,
 } from "./models";
 import { getRandomInt } from "./utils";
-import { filter } from "./constants/referrence";
 
 export const storeState = selector<Store>({
   key: "store",
@@ -74,13 +75,16 @@ export const activeFilterState = atom<string>({
 export const storeProductResultState = selector<Product[]>({
   key: "storeProductResult",
   get: ({ get }) => {
-    get(activeCateState);
+    const activeCategory = get(activeCateState);
     get(searchProductState);
 
     const store = get(storeState);
-    const pos = getRandomInt(store.listProducts.length - 122, 0);
-    const num = getRandomInt(120, 50);
-    return [...store.listProducts.slice(pos, pos + num)];
+    if (activeCategory == 0) return [...store.listProducts];
+
+    const filteredProducts = store.listProducts.filter(
+      (product) => product.category === activeCategory
+    );
+    return [...filteredProducts];
   },
 });
 

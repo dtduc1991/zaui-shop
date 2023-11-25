@@ -25,6 +25,7 @@ export type Product = {
   id: number;
   imgProduct: string;
   nameProduct: string;
+  category: number;
   salePrice: number | string;
   retailPrice: number | string;
   description: string;

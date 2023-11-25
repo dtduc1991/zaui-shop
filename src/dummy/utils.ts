@@ -1,6 +1,7 @@
 import { StoreTypeRef } from "../constants/referrence";
 import { Product, Store } from "../models";
 import { getRandomInt } from "../utils";
+import { images } from "../images";
 import {
   listAddress,
   listCategories,
@@ -21,10 +22,11 @@ export const createProductDummy = ({ id }: { id: number }): Product => {
   const randomPrice = listPrices[getRandomInt(listPrices.length) - 1];
   const product: Product = {
     id,
-    imgProduct: getImgUrl(`product-large-${getRandomInt(numProduct)}`),
+    imgProduct: "/images/bo_xoi.jpg",
     nameProduct: listNameProducts[getRandomInt(listNameProducts.length) - 1],
     salePrice: randomPrice.salePrice,
     retailPrice: randomPrice.retailPrice,
+    category: 2,
     description: listDescriptions[getRandomInt(listDescriptions.length) - 1],
     options: getRandomInt(1, 0) === 0 ? [] : listProductOptions,
   };
@@ -33,10 +35,23 @@ export const createProductDummy = ({ id }: { id: number }): Product => {
 
 export const createDummyProductCategories = () => {
   const dummyProducts: Product[] = [];
-  const num = 150;
+  const num = 10;
   for (let x = 0; x < num; x += 1) {
     dummyProducts.push(createProductDummy({ id: dummyProducts.length }));
   }
+
+  const randomPrice = listPrices[getRandomInt(listPrices.length) - 1];
+  dummyProducts.push({
+    id: dummyProducts.length,
+    imgProduct: "/images/bo_xoi.jpg",
+    nameProduct: listNameProducts[getRandomInt(listNameProducts.length) - 1],
+    salePrice: randomPrice.salePrice,
+    retailPrice: randomPrice.retailPrice,
+    category: 1,
+    description: listDescriptions[getRandomInt(listDescriptions.length) - 1],
+    options: getRandomInt(1, 0) === 0 ? [] : listProductOptions,
+  });
+
   return dummyProducts;
 };
 
@@ -46,11 +61,11 @@ export const createDummyStore = (): Store => {
   const listType = Object.keys(StoreTypeRef) as (keyof typeof StoreTypeRef)[];
   const dummyStore = {
     id: storeId,
-    logoStore: getImgUrl(`logo-${getRandomInt(numLogo)}-new`),
+    logoStore: "/images/logo.png",
     bannerStore: getImgUrl(`store-banner-${getRandomInt(numStoreBanner)}`),
-    nameStore: listNameStore[getRandomInt(listNameStore.length) - 1],
-    followers: getRandomInt(9999, 10),
-    address: listAddress[getRandomInt(listAddress.length) - 1],
+    nameStore: "Hueponics Rau sạch thủy canh Huế",
+    followers: 4532,
+    address: "Thừa Thiên Huế",
     type: listType[getRandomInt(listType.length) - 1],
     listProducts: listDummyProducts,
     categories: listCategories,
