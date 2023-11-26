@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "ZMP ECOMMERCE STORE",
+    "title": "Hueponics Rau sạch thủy canh Huế",
     "headerColor": "",
     "textColor": "white",
     "statusBarColor": "#EF1724",
@@ -16,6 +16,6 @@
     "searchBar": true,
     "orderValue": "500000",
     "oaIDtoOpenChat": "",
-    "shippingFee": "30000"
+    "shippingFee": "15000"
   }
 }
