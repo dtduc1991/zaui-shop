@@ -1,7 +1,6 @@
 import { StoreTypeRef } from "../constants/referrence";
 import { Product, Store } from "../models";
 import { getRandomInt } from "../utils";
-import { images } from "../images";
 import {
   listAddress,
   listCategories,

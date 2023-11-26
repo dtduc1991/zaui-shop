@@ -6,6 +6,8 @@ import ButtonPriceFixed from "../components/button-fixed/button-price-fixed";
 import CategoriesStore from "../components/categories-store";
 import CardProductHorizontal from "../components/custom-card/card-product-horizontal";
 import CardShop from "../components/custom-card/card-shop";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 import { filter } from "../constants/referrence";
 import { Product } from "../models";
@@ -77,6 +79,17 @@ const HomePage: React.FunctionComponent = () => {
             />
           </div>
           <div className="bg-gray-100 h-3" />
+          <Carousel autoPlay infiniteLoop showThumbs={false}>
+            <div>
+              <img src="/assets/1.jpg" />
+            </div>
+            <div>
+              <img src="/assets/2.png" />
+            </div>
+            <div>
+              <img src="/assets/3.png" />
+            </div>
+          </Carousel>
           <div
             className="bg-white p-3"
             style={{ marginBottom: totalPrice > 0 ? "120px" : "0px" }}
