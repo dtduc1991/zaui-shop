@@ -1,6 +1,7 @@
 import { StoreTypeRef } from "../constants/referrence";
 import { Product, Store } from "../models";
 import { getRandomInt } from "../utils";
+import { productsContent } from "../mock/products";
 import {
   listAddress,
   listCategories,
@@ -34,21 +35,20 @@ export const createProductDummy = ({ id }: { id: number }): Product => {
 
 export const createDummyProductCategories = () => {
   const dummyProducts: Product[] = [];
-  const num = 10;
-  for (let x = 0; x < num; x += 1) {
-    dummyProducts.push(createProductDummy({ id: dummyProducts.length }));
-  }
+  productsContent.forEach((product) => {
+    const dummyProduct: Product = {
+      id: product.id,
+      imgProduct: product.imgProduct,
+      nameProduct: product.nameProduct,
+      category: product.category,
+      salePrice: product.salePrice,
+      retailPrice: product.retailPrice,
+      description: product.description,
+      options: [],
+      // options: getRandomInt(1, 0) === 0 ? [] : listProductOptions,
+    };
 
-  const randomPrice = listPrices[getRandomInt(listPrices.length) - 1];
-  dummyProducts.push({
-    id: dummyProducts.length,
-    imgProduct: "/images/bo_xoi.jpg",
-    nameProduct: listNameProducts[getRandomInt(listNameProducts.length) - 1],
-    salePrice: randomPrice.salePrice,
-    retailPrice: randomPrice.retailPrice,
-    category: 1,
-    description: listDescriptions[getRandomInt(listDescriptions.length) - 1],
-    options: getRandomInt(1, 0) === 0 ? [] : listProductOptions,
+    dummyProducts.push(dummyProduct);
   });
 
   return dummyProducts;
