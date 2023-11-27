@@ -127,7 +127,7 @@ const ProductPicker = () => {
         <div className="m-4">
           <Input
             type="text"
-            placeholder="Nhập ghi chú (VD. Ít đá, nhiều đường...)"
+            placeholder="Nhập ghi chú (VD: Giao trong tuần, gọi trước...)"
             clearable
             name="note"
             value={note}
