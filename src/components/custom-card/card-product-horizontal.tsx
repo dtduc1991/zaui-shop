@@ -44,8 +44,8 @@ const CardProductHorizontal = ({
       >
         <div className="line-clamp-2 text-sm break-words">{nameProduct}</div>
         <span className=" pt-2 font-semibold text-sm text-primary">
-          <span className=" font-normal text-xs text-primary">đ </span>
           {convertPrice(salePrice)}
+          <span className=" font-normal text-xs text-primary">đ </span>
         </span>
       </div>
       <>

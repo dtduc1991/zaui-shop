@@ -110,7 +110,7 @@ const DetailProduct = () => {
         {product && (
           <>
             <img src={product.imgProduct} alt="" className="w-full h-auto" />
-            {salePercentage && (
+            {salePercentage != 0 && (
               <div className="absolute top-2.5 right-2.5 text-white font-medium text-sm px-2 py-1 bg-[#FF9743] w-auto h-auto rounded-lg">
                 -{salePercentage}%
               </div>
@@ -118,17 +118,20 @@ const DetailProduct = () => {
             <Box m={0} p={4} className="border-b">
               <div className=" text-lg">{product?.nameProduct}</div>
               <span className=" pt-1 font-semibold text-base text-primary">
-                <span className=" font-normal text-xs text-primary">đ</span>
-                {convertPrice(product.salePrice)}
+                <span className=" font-normal text-xs text-primary"></span>
+                {convertPrice(product.salePrice)}đ
               </span>
-              <span className=" pl-2 pt-1 font-medium text-sm text-zinc-400">
-                đ{convertPrice(product.retailPrice)}
-              </span>
+              {product.retailPrice != product.salePrice && (
+                <span className=" pl-2 pt-1 font-medium text-sm text-zinc-400">
+                  {convertPrice(product.retailPrice)}đ
+                </span>
+              )}
             </Box>
             <Box
               m={0}
               px={4}
               py={5}
+              style={{ whiteSpace: "pre-wrap" }}
               className=" text-justify break-words whitespace-pre-line"
             >
               {product.description}

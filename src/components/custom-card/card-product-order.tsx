@@ -46,8 +46,8 @@ const CardProductOrder = ({
       </div>
     </div>
     <span className=" pt-1 font-semibold text-sm">
-      <span className=" font-normal text-xs">đ</span>
       {convertPrice(salePrice)}
+      <span className=" font-normal text-xs">đ</span>
     </span>
   </div>
 );
